@@ -8,8 +8,9 @@ def search_by_ico():
    response = requests.get(url)
    data = response.json()
    obchodni_jmeno = data["obchodniJmeno"]
-   adresa = data.get("sidlo", {}).get("textovaAdresa")
+   adresa = data["sidlo"]["textovaAdresa"]
    print(f"{obchodni_jmeno}, {adresa}")
+   
 search_by_ico()
 
 
